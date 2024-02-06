@@ -3,26 +3,25 @@ let taskContainer = document.getElementById("task");
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 loadTasks();
 
-
 addBtn.addEventListener("click", (e) => {
-    let input = document.querySelector("input").value;
-    e.preventDefault();
-    if (input.length === 0) {
-      alert("Please enter a task");
-    } else {
-      let taskId = Date.now().toString();
-      taskContainer.innerHTML += `
+  let input = document.querySelector("input").value;
+  e.preventDefault();
+  if (input.length === 0) {
+    alert("Please enter a task");
+  } else {
+    let taskId = Date.now().toString();
+    taskContainer.innerHTML += `
           <div class="task" id="${taskId}">
           <span>${input}</span>
           <button class="delete" onclick="deleteTask('${taskId}')">
           <i class="far fa-trash-alt"></i>
           </button>
           </div>`;
-      
-      tasks.push({ id: taskId, text: input });
-      localStorage.setItem("tasks", JSON.stringify(tasks));
-    }
-  });
+
+    tasks.push({ id: taskId, text: input });
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }
+});
 
 function loadTasks() {
   taskContainer.innerHTML = "";
@@ -31,7 +30,7 @@ function loadTasks() {
     <div class="task" id="${task.id}">
       <span>${task.text}</span>
       <button class="delete" onclick="deleteTask('${task.id}')">
-        <i class="far fa-trash-alt"></i>
+      <i class="fa-solid fa-trash"></i>
       </button>
     </div>`;
   });
