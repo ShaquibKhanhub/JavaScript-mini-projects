@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note App</title>
+    <link
+      rel="shortcut icon"
+      href="img/pngimg.com - sticky_note_PNG18964.png"
+      type="image/x-icon"
+    />
+    <!-- Bootstrap CDN -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container my-3">
+      <h1 class="text-center">My Notes App</h1>
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="card-title">Add a note</h5>
+          <div class="form-group">
+            <textarea rows="2" class="form-control" id="addText"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" id="addBtn">
+            Add Note
+          </button>
+        </div>
+      </div>
+      <hr />
+      <h1 class="text-center">Your Notes</h1>
+      <div class="row container-fluid text-center" id="notes"></div>
+    </div>
+  </body>
+
+  <script src="main.js"></script>
+</html>
